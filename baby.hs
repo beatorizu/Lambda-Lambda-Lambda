@@ -1,3 +1,5 @@
+length' list = sum[1 | _ <-list]
+
 doubleSmallNumber x = if x > 100 then x else doubleMe x
 
 doubleSmallNumber' x = (if x > 100 then x else doubleMe x) + 1
