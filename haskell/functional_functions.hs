@@ -72,3 +72,7 @@ sum' (x:xs) = x + sum' xs
 mdc :: Integral a => a -> a -> a
 mdc m n | m `mod` n == 0 = n
         | m `mod` n /= 0 = mdc n (m `mod` n)
+
+capital :: String -> String
+capital "" = "Empty string, whoops!"
+capital t@(x:xs) = "The first letter of " ++ t ++ " is " ++ [x]
