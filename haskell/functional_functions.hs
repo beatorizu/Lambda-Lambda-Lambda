@@ -39,8 +39,8 @@ third (_, _, z) = z
 
 -- Writing head func
 head' :: [a] -> a
-head' [] = error "Can't call head on an empty list, dummy!"
-head' (x:_) = x
+head' xs = case xs of [] -> error "Can't call head on an empty list, dummy!"
+                      (x:_) -> x
 
 -- Writing length func
 length' :: (Num b) => [a] -> b
@@ -62,7 +62,7 @@ capital :: String -> String
 capital "" = "Empty string, whoops!"
 capital t@(x:xs) = "The first letter of " ++ t ++ " is " ++ [x]
 
--- Describe list length
+-- Describe list elemets
 tell :: (Show a) => [a] -> String
 tell [] = "The list is empty"
 tell (x:[]) = "The list has one element: " ++ show x
@@ -111,3 +111,9 @@ cylinder r h =
         sideArea = 2 * pi * r * h
         topArea = pi * r ^2
       in sideArea + 2 * topArea
+
+-- Describe list length
+describeList :: [a] -> String
+describeList xs = "The list is " ++ case xs of [] -> "empty."
+                                               [x] -> "a singleton list."
+                                               xs -> "a longer list."
