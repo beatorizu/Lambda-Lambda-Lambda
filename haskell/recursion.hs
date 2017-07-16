@@ -43,3 +43,8 @@ take' n _
     | n <= 0   = []
 take' _ []     = []
 take' n (x:xs) = x : take' (n-1) xs
+
+-- Reverse a list
+reverse' :: [a] -> [a]
+reverse' [] = []
+reverse' (x:xs) = reverse' xs ++ [x]
