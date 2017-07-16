@@ -25,9 +25,15 @@ sum' (x:xs) = x + sum' xs
 mdc :: Integral a => a -> a -> a
 mdc m n | m `mod` n == 0 = n
         | m `mod` n /= 0 = mdc n (m `mod` n)
-      
+
 -- Find the maximum value in a list
 maximum' :: (Ord a) => [a] -> a
 maximum' [] = error "maximum of empty list"
 maximum' [x] = x
 maximum' (x:xs) = max x (maximum' xs)
+
+-- Replicate an item n t times
+replicate' :: (Num i, Ord i) => i -> a -> [a]
+replicate' t n
+    | t < 1 = []
+    | otherwise  = n:replicate' (t-1) n
