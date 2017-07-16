@@ -52,3 +52,9 @@ reverse' (x:xs) = reverse' xs ++ [x]
 -- Repeat a item
 repeat' :: a -> [a]
 repeat' x = x:repeat' x
+
+-- zip two lists
+zip' :: [a] -> [b] -> [(a,b)]
+zip' [] _ = []
+zip' _ [] = []
+zip' (x:xs) (y:ys) = (x,y):zip' xs ys
