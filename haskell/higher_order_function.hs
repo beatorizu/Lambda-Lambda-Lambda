@@ -9,3 +9,6 @@ divideByTen = (/10)
 
 isUpperAlphanum :: Char -> Bool
 isUpperAlphanum = (`elem` ['A'..'Z'])
+
+subtractFour :: (Num a) => a -> a
+subtractFour = (subtract 4)
