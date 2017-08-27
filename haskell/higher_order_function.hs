@@ -54,3 +54,6 @@ sum' = foldl (+) 0
 -- elem foldl
 elem' :: (Eq a) => a -> [a] -> Bool
 elem' e xs = foldl (\acc x -> if e == x then True else acc) False xs
+
+mapf :: (a -> b) -> [a] -> [b]
+mapf f xs = foldr (\x acc -> f x : acc) [] xs
