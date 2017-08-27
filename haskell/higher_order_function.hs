@@ -46,3 +46,7 @@ chain n
 
 numLongChains :: Int
 numLongChains = length (filter (\xs -> length xs > 15) (map chain [1..100]))
+
+-- Now using fold and lambda :)
+sum' :: Num a => [a] -> a
+sum' xs = foldl (\acc x -> acc + x) 0 xs
