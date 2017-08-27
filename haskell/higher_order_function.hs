@@ -52,3 +52,5 @@ sum' :: (Num a) => [a] -> a
 sum' = foldl (+) 0
 
 -- elem foldl
+elem' :: (Eq a) => a -> [a] -> Bool
+elem' e xs = foldl (\acc x -> if e == x then True else acc) False xs
